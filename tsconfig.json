@@ -8,6 +8,6 @@
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts", "src/firebase.ts"],
+  "include": ["src/**/*.ts", "src/firebase.ts", "types.d.ts"],
   "exclude": ["node_modules"]
 }

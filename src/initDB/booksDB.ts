@@ -1,6 +1,8 @@
 import { Timestamp } from "firebase-admin/firestore";
 
 export interface Book {
+  id: string;
+  ownerId: string;
   title: string;
   author: string;
   publication_year: number;
@@ -17,6 +19,8 @@ export interface Book {
 
 const books: Book[] = [
   {
+    id: "PGAOH6N63Qexw",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "Harry Potter y la piedra filosofal",
     author: "J.K. Rowling",
     publication_year: 1997,
@@ -32,6 +36,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "eBHslkH3IDk0M",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "El señor de los anillos: La Comunidad del Anillo",
     author: "J.R.R. Tolkien",
     publication_year: 1954,
@@ -48,6 +54,8 @@ const books: Book[] = [
   },
 
   {
+    id: "eDhhviZ0mAquJ",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "Cien años de soledad",
     author: "Gabriel García Márquez",
     publication_year: 1967,
@@ -63,6 +71,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "lAAQ4pjlwmGFB",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "1984",
     author: "George Orwell",
     publication_year: 1949,
@@ -78,6 +88,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "WCCMfFcoLxOy4",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "El principito",
     author: "Antoine de Saint-Exupéry",
     publication_year: 1943,
@@ -93,6 +105,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "cHdSHfJZGzja6",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "El extranjero",
     author: "Albert Camus",
     publication_year: 1942,
@@ -108,6 +122,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "xFBoMcQdHY1pU",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "El nombre del viento",
     author: "Patrick Rothfuss",
     publication_year: 2007,
@@ -123,6 +139,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "TbrtgLoyQ5NmC",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "Orgullo y prejuicio",
     author: "Jane Austen",
     publication_year: 1813,
@@ -138,6 +156,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "jPZAAKlVYSBP9",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "El principito",
     author: "Antoine de Saint-Exupéry",
     publication_year: 1943,
@@ -153,6 +173,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "UxnACh3cZnwRe",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "El extranjero",
     author: "Albert Camus",
     publication_year: 1942,
@@ -168,6 +190,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "OEoTtZcjVRNWX",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "Crimen y castigo",
     author: "Fyodor Dostoievski",
     publication_year: 1866,
@@ -183,6 +207,8 @@ const books: Book[] = [
     updated_at: Timestamp.fromDate(new Date(2024, 10, 30, 15, 20, 45)),
   },
   {
+    id: "V7tHHptbFaB0i",
+    ownerId: "bEXDwTQqXQaELPRILKRvBPh83D03",
     title: "El gran Gatsby",
     author: "F. Scott Fitzgerald",
     publication_year: 1925,

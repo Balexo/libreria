@@ -5,6 +5,7 @@ import express, { Application } from "express";
 import morgan from "morgan";
 import path from "path";
 import books from "./routes/books";
+import users from "./routes/users";
 
 const app: Application = express();
 
@@ -19,7 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //routes
-app.use("/api/books", books);
+app.use("/books", books);
+app.use("/users", users);
 
 //statics files
 app.use(express.static(path.join(__dirname, "public")));
