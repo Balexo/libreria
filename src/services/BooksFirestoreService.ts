@@ -15,9 +15,9 @@ export const getBooks = async (): Promise<Book[]> => {
   return data;
 };
 
-export const addBook = async (bookData: Book): Promise<void> => {
-  const bookRef = firestore.collection(booksCollection);
-  await bookRef.add(bookData);
+export const addBook = async (bookData: Omit<Book, "id">) => {
+  const bookRef = await firestore.collection(booksCollection).add(bookData);
+  return bookRef;
 };
 
 export const deleteBook = async (id: string): Promise<void> => {
@@ -31,4 +31,14 @@ export const updatedBook = async (
 ): Promise<void> => {
   const bookRef = firestore.collection(booksCollection).doc(id);
   await bookRef.update(bookData);
+};
+
+export const getBookById = async (id: string): Promise<Book | null> => {
+  const bookRef = firestore.collection(booksCollection).doc(id);
+  const bookById = await bookRef.get();
+
+  if (!bookById.exists) {
+    return null;
+  }
+  return bookById.data() as Book;
 };

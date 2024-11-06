@@ -8,7 +8,7 @@ export interface User {
   email: string;
   password: string;
   createdAt: Timestamp;
-  updatedAT: Timestamp;
+  updatedAt: Timestamp;
 }
 
 const users: User[] = [
@@ -20,7 +20,7 @@ const users: User[] = [
     email: "hernesto.fernandez@email.com",
     password: "",
     createdAt: Timestamp.fromDate(new Date(2024, 10, 30, 11, 10, 15)),
-    updatedAT: Timestamp.fromDate(new Date(2024, 10, 30, 15, 6, 9)),
+    updatedAt: Timestamp.fromDate(new Date(2024, 10, 30, 15, 6, 9)),
   },
 ];
 
