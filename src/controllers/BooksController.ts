@@ -129,6 +129,16 @@ export const updateBookDetails = tryCatch(
       });
     }
 
+    const ownerId = req.user?.uid;
+
+    if (bookExists?.ownerId !== ownerId) {
+      res.status(404).json({
+        message: "Solo el propietario del libro puede editarlo",
+        type: "error",
+        data: {},
+      });
+    }
+
     const updated_at = Timestamp.fromDate(new Date());
 
     const updatedBookData: Partial<Book> = {
@@ -153,3 +163,56 @@ export const updateBookDetails = tryCatch(
     });
   },
 );
+
+export const deleteABook = tryCatch(async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  if (!id) {
+    return res
+      .status(400)
+      .json({ message: "Falta ID del libro", type: "error", data: {} });
+  }
+
+  const book = await getBookById(id);
+  if (!book) {
+    return res
+      .status(404)
+      .json({ message: "Libro no encontrado", type: "error", data: {} });
+  }
+
+  const ownerId = req.user?.uid;
+
+  if (book.ownerId !== ownerId) {
+    return res.status(404).json({
+      message: "Solo el propietario del libro puede borrarlo",
+      type: "error",
+      data: {},
+    });
+  }
+
+  await deleteBook(id);
+  res.status(200).json({
+    message: "Libro borrado correctamente",
+    type: "success",
+    data: {},
+  });
+});
+
+export const getBook = tryCatch(async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  if (!id) {
+    res.status(404).json({
+      message: "No existe un libro con este ID",
+      type: "error",
+      data: {},
+    });
+  }
+
+  const book = await getBookById(id);
+  res.status(200).json({
+    message: "Libro encontrado correctamente",
+    type: "success",
+    data: { book },
+  });
+});
